@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "historical_city_populations"
+version = "0.0.1"
+description = "This project extracts the historical populations of US Cities from PDFs of Census reports"
+authors = [
+  { name = "David Hackett" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License"
+]
+requires-python = "~=3.12.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["historical_city_populations"]
+include = ["pyproject.toml", "historical_city_populations/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["historical_city_populations"]
+force-sort-within-sections = true
+
